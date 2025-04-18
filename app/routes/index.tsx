@@ -9,7 +9,9 @@ export const Route = createFileRoute("/" as never)({
 function RouteComponent() {
 	return (
 		<div className="m-auto border-x max-w-[1200px] h-screen">
-			<div className="border-b h-24"></div>
+			<div className="border-b h-24 p-12 flex items-center">
+				<h1 className="font-bold text-xl">gotrendy</h1>
+			</div>
 			<div className="border-b relative flex h-[800px] w-full flex-col items-center justify-center overflow-hidden">
 				<DotPattern
 					glow={true}
