@@ -1,4 +1,6 @@
+import { BlurFade } from "@/components/ui/blur-fade";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { cn } from "@/lib/utils";
 import { createFileRoute } from "@tanstack/react-router";
@@ -13,10 +15,10 @@ function RouteComponent() {
 			<div className="border-b h-24 p-12 flex items-center">
 				<h1 className="font-bold text-xl">gotrendy</h1>
 			</div>
-			<div className="border-b relative flex h-[800px] w-full flex-col items-center justify-center overflow-hidden">
+			<div className="border-b relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
 				<DotPattern
 					className={cn(
-						"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+						"[mask-image:radial-gradient(1500px_circle_at_center,transparent,white)]",
 					)}
 				/>
 				<TextAnimate
@@ -24,7 +26,6 @@ function RouteComponent() {
 					className="font-bold text-6xl"
 					animation="blurInDown"
 					by="character"
-					delay={0.5}
 					duration={0.5}
 				>
 					Your trendy idea machine
@@ -34,7 +35,6 @@ function RouteComponent() {
 					className="text-2xl max-w-1/2 text-center mt-8 font-medium text-muted-foreground"
 					animation="blurInUp"
 					by="character"
-					delay={0.5}
 					duration={0.5}
 				>
 					Get personalized content ideas, powered by your
@@ -44,11 +44,15 @@ function RouteComponent() {
 					className="text-2xl max-w-1/2 text-center font-medium text-muted-foreground"
 					animation="blurInUp"
 					by="character"
-					delay={0.5}
 					duration={0.5}
 				>
 					browsing and social feeds.
 				</TextAnimate>
+				<BlurFade delay={0.5} duration={0.5}>
+					<InteractiveHoverButton className="mt-8">
+						Get started now
+					</InteractiveHoverButton>
+				</BlurFade>
 			</div>
 		</div>
 	);
