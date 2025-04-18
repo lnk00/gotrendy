@@ -28,7 +28,7 @@ function RouteComponent() {
 					by="character"
 					duration={0.5}
 				>
-					Your trendy idea machine
+					The content engine for modern creators
 				</TextAnimate>
 				<TextAnimate
 					as={"h2"}
@@ -53,6 +53,11 @@ function RouteComponent() {
 						Get started now
 					</InteractiveHoverButton>
 				</BlurFade>
+			</div>
+			<div className="border-b relative flex h-[180px] w-full flex-col items-center justify-center overflow-hidden bg-blue-600">
+				<span className="font-bold text-4xl max-w-1/2 text-center text-white">
+					Stay inspired with topics that truly resonate with your audience.
+				</span>
 			</div>
 		</div>
 	);
