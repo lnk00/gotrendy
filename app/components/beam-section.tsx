@@ -2,6 +2,7 @@ import { type RefObject, useRef } from "react";
 import { AnimatedBeam } from "./ui/animated-beam";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarImage } from "./ui/avatar";
+import { AnimatedList } from "./ui/animated-list";
 
 type IPropsSocialFeed = {
 	ref: RefObject<HTMLDivElement | null>;
@@ -101,8 +102,16 @@ export function BeamSection() {
 						ref={ideaLinkedinRef}
 					/>
 					<div className="font-semibold text-lg">Linkedin posts</div>
-					<div className="w-full flex flex-col gap-4">
-						<LinkedinPost />
+					<div className="relative w-full h-[370px] overflow-hidden">
+						<AnimatedList delay={2000}>
+							{Array.from({ length: 5 }, () => {})
+								.flat()
+								.map((_, idx) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+									<LinkedinPost key={idx} />
+								))}
+						</AnimatedList>
+						<div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background" />
 					</div>
 				</div>
 				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
