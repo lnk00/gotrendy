@@ -1,6 +1,7 @@
 import { type RefObject, useRef } from "react";
 import { AnimatedBeam } from "./ui/animated-beam";
 import { cn } from "@/lib/utils";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 type IPropsSocialFeed = {
 	ref: RefObject<HTMLDivElement | null>;
@@ -18,6 +19,30 @@ function SocialFeed({ ref, img, className }: IPropsSocialFeed) {
 			ref={ref}
 		>
 			<img src={img} alt="" />
+		</div>
+	);
+}
+
+function LinkedinPost() {
+	return (
+		<div className="w-full border rounded-lg p-4 relative">
+			<div className="flex gap-2 items-start">
+				<Avatar>
+					<AvatarImage src="assets/images/avatar.png" alt="avatar" />
+				</Avatar>
+				<div className="flex flex-col">
+					<span className="font-semibold leading-4">Damien Dumontet</span>
+					<span className="opacity-50 text-sm leading-4">
+						Software engineer
+					</span>
+				</div>
+			</div>
+			<div className="leading-6 mt-4">
+				If you're a software engineer you know this feeling...
+			</div>
+			<div className="leading-6 text-sm opacity-50 absolute bottom-4 right-6 cursor-pointer">
+				...more
+			</div>
 		</div>
 	);
 }
@@ -68,13 +93,16 @@ export function BeamSection() {
 			>
 				<span className="font-bold text-lg">trendlo</span>
 			</div>
-			<div className="w-full mt-24 flex gap-8 px-8">
+			<div className="w-full mt-24 flex gap-8 px-8 items-start">
 				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
 						className="size-3 border-2 bg-white rounded-full"
 						ref={ideaLinkedinRef}
 					/>
 					<div className="font-semibold text-lg">Linkedin posts</div>
+					<div className="w-full flex flex-col gap-4">
+						<LinkedinPost />
+					</div>
 				</div>
 				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
