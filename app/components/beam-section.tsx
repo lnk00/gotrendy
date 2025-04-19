@@ -1,10 +1,31 @@
-import { useRef } from "react";
+import { type RefObject, useRef } from "react";
 import { AnimatedBeam } from "./ui/animated-beam";
+import { cn } from "@/lib/utils";
+
+type IPropsSocialFeed = {
+	ref: RefObject<HTMLDivElement | null>;
+	img: string;
+	className?: string;
+};
+
+function SocialFeed({ ref, img, className }: IPropsSocialFeed) {
+	return (
+		<div
+			className={cn(
+				"z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+				className,
+			)}
+			ref={ref}
+		>
+			<img src={img} alt="" />
+		</div>
+	);
+}
 
 export function BeamSection() {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const linkedinRef = useRef<HTMLDivElement>(null);
-	const titokRef = useRef<HTMLDivElement>(null);
+	const tiktokRef = useRef<HTMLDivElement>(null);
 	const googleRef = useRef<HTMLDivElement>(null);
 	const youtubeRef = useRef<HTMLDivElement>(null);
 	const redditRef = useRef<HTMLDivElement>(null);
@@ -19,36 +40,27 @@ export function BeamSection() {
 			ref={containerRef}
 		>
 			<div className="flex gap-16 items-center justify-center">
-				<div
-					className="z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-56"
+				<SocialFeed
 					ref={linkedinRef}
-				>
-					<img src="assets/images/linkedin.svg" alt="" />
-				</div>
-				<div
-					className="z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-16"
-					ref={titokRef}
-				>
-					<img src="assets/images/tiktok.svg" alt="" />
-				</div>
-				<div
-					className="z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]"
-					ref={googleRef}
-				>
-					<img src="assets/images/google.svg" alt="" />
-				</div>
-				<div
-					className="z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-16"
+					img="assets/images/linkedin.svg"
+					className="mt-56"
+				/>
+				<SocialFeed
+					ref={tiktokRef}
+					img="assets/images/tiktok.svg"
+					className="mt-16"
+				/>
+				<SocialFeed ref={googleRef} img="assets/images/google.svg" />
+				<SocialFeed
 					ref={youtubeRef}
-				>
-					<img src="assets/images/youtube.svg" alt="" />
-				</div>
-				<div
-					className="z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-56"
+					img="assets/images/youtube.svg"
+					className="mt-16"
+				/>
+				<SocialFeed
 					ref={redditRef}
-				>
-					<img src="assets/images/reddit.svg" alt="" />
-				</div>
+					img="assets/images/reddit.svg"
+					className="mt-56"
+				/>
 			</div>
 			<div
 				className="z-10 flex size-25 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-2"
@@ -88,7 +100,7 @@ export function BeamSection() {
 			/>
 			<AnimatedBeam
 				containerRef={containerRef}
-				fromRef={titokRef}
+				fromRef={tiktokRef}
 				toRef={trendloRef}
 				duration={7}
 				delay={3}
