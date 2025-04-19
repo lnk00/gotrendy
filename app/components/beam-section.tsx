@@ -68,7 +68,7 @@ export function BeamSection() {
 		>
 			<DotPattern
 				className={cn(
-					"[mask-image:radial-gradient(2000px_circle_at_center,transparent,white)]",
+					"[mask-image:radial-gradient(1500px_circle_at_center,transparent,white)]",
 				)}
 			/>
 			<div className="flex gap-16 items-center justify-center">
@@ -125,6 +125,17 @@ export function BeamSection() {
 						ref={ideaBlogRef}
 					/>
 					<div className="font-semibold text-lg">Blog posts</div>
+					<div className="relative w-full h-[370px] overflow-hidden px-4">
+						<AnimatedList delay={2200}>
+							{Array.from({ length: 5 }, () => {})
+								.flat()
+								.map((_, idx) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+									<LinkedinPost key={idx} />
+								))}
+						</AnimatedList>
+						<div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background" />
+					</div>
 				</div>
 			</div>
 			<AnimatedBeam
