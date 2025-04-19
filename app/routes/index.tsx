@@ -1,3 +1,4 @@
+import { BeamSection } from "@/components/beam-section";
 import { BoldTextSection } from "@/components/bold-text-section";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
@@ -9,10 +10,11 @@ export const Route = createFileRoute("/" as never)({
 
 function RouteComponent() {
 	return (
-		<div className="m-auto border-x max-w-[1200px] h-screen">
+		<div className="m-auto border-x max-w-[1200px]">
 			<Nav />
 			<Hero />
 			<BoldTextSection />
+			<BeamSection />
 		</div>
 	);
 }
