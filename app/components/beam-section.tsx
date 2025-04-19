@@ -38,7 +38,8 @@ function LinkedinPost() {
 				</div>
 			</div>
 			<div className="leading-6 mt-4">
-				If you're a software engineer you know this feeling...
+				If you're a software engineer you know this feeling. Here is 5 tricks to
+				fix your mood...👇
 			</div>
 			<div className="leading-6 text-sm opacity-50 absolute bottom-4 right-6 cursor-pointer">
 				...more
@@ -57,7 +58,7 @@ export function BeamSection() {
 	const trendloRef = useRef<HTMLDivElement>(null);
 	const ideaLinkedinRef = useRef<HTMLDivElement>(null);
 	const ideaYoutubeRef = useRef<HTMLDivElement>(null);
-	const ideaTiktokRef = useRef<HTMLDivElement>(null);
+	const ideaBlogRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<div
@@ -93,7 +94,7 @@ export function BeamSection() {
 			>
 				<span className="font-bold text-lg">trendlo</span>
 			</div>
-			<div className="w-full mt-24 flex gap-8 px-8 items-start">
+			<div className="w-full mt-24 flex gap-8 px-24 items-start">
 				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
 						className="size-3 border-2 bg-white rounded-full"
@@ -107,16 +108,9 @@ export function BeamSection() {
 				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
 						className="size-3 border-2 bg-white rounded-full"
-						ref={ideaYoutubeRef}
+						ref={ideaBlogRef}
 					/>
-					<div className="font-semibold text-lg">Youtube videos</div>
-				</div>
-				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
-					<div
-						className="size-3 border-2 bg-white rounded-full"
-						ref={ideaTiktokRef}
-					/>
-					<div className="font-semibold text-lg">TikTok videos</div>
+					<div className="font-semibold text-lg">Blog posts</div>
 				</div>
 			</div>
 			<AnimatedBeam
@@ -166,13 +160,7 @@ export function BeamSection() {
 			<AnimatedBeam
 				containerRef={containerRef}
 				fromRef={trendloRef}
-				toRef={ideaYoutubeRef}
-				duration={5}
-			/>
-			<AnimatedBeam
-				containerRef={containerRef}
-				fromRef={trendloRef}
-				toRef={ideaTiktokRef}
+				toRef={ideaBlogRef}
 				duration={2}
 			/>
 		</div>
