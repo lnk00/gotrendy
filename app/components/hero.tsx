@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 
 export function Hero() {
 	return (
-		<div className="border-b relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+		<div className="border-b relative flex h-[480px] w-full flex-col items-center justify-center overflow-hidden">
 			<DotPattern
 				className={cn(
-					"[mask-image:radial-gradient(1500px_circle_at_center,transparent,white)]",
+					"[mask-image:radial-gradient(1200px_circle_at_center,transparent,white)]",
 				)}
 			/>
 			<h1 className="font-bold text-6xl">

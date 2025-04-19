@@ -3,6 +3,7 @@ import { AnimatedBeam } from "./ui/animated-beam";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { AnimatedList } from "./ui/animated-list";
+import { DotPattern } from "./ui/dot-pattern";
 
 type IPropsSocialFeed = {
 	ref: RefObject<HTMLDivElement | null>;
@@ -26,7 +27,7 @@ function SocialFeed({ ref, img, className }: IPropsSocialFeed) {
 
 function LinkedinPost() {
 	return (
-		<div className="w-full border rounded-lg p-4 relative [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]">
+		<div className="w-full bg-background border rounded-lg p-4 relative [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]">
 			<div className="flex gap-2 items-start">
 				<Avatar>
 					<AvatarImage src="assets/images/avatar.png" alt="avatar" />
@@ -58,14 +59,18 @@ export function BeamSection() {
 	const redditRef = useRef<HTMLDivElement>(null);
 	const trendloRef = useRef<HTMLDivElement>(null);
 	const ideaLinkedinRef = useRef<HTMLDivElement>(null);
-	const ideaYoutubeRef = useRef<HTMLDivElement>(null);
 	const ideaBlogRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<div
-			className="flex flex-col items-center justify-center relative pb-56"
+			className="flex flex-col items-center justify-center relative pb-36 border-b"
 			ref={containerRef}
 		>
+			<DotPattern
+				className={cn(
+					"[mask-image:radial-gradient(2000px_circle_at_center,transparent,white)]",
+				)}
+			/>
 			<div className="flex gap-16 items-center justify-center">
 				<SocialFeed
 					ref={linkedinRef}
@@ -102,7 +107,7 @@ export function BeamSection() {
 						ref={ideaLinkedinRef}
 					/>
 					<div className="font-semibold text-lg">Linkedin posts</div>
-					<div className="relative w-full h-[370px] overflow-hidden">
+					<div className="relative w-full h-[370px] overflow-hidden px-4">
 						<AnimatedList delay={2000}>
 							{Array.from({ length: 5 }, () => {})
 								.flat()
