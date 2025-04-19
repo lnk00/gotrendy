@@ -15,7 +15,7 @@ export function BeamSection() {
 
 	return (
 		<div
-			className="flex flex-col items-center justify-center relative mb-56"
+			className="flex flex-col items-center justify-center relative pb-56"
 			ref={containerRef}
 		>
 			<div className="flex gap-16 items-center justify-center">
@@ -51,27 +51,27 @@ export function BeamSection() {
 				</div>
 			</div>
 			<div
-				className="z-10 flex size-20 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-2"
+				className="z-10 flex size-25 items-center justify-center rounded-full border-2 bg-white p-5 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] mt-2"
 				ref={trendloRef}
 			>
 				<span className="font-bold text-lg">trendlo</span>
 			</div>
 			<div className="w-full mt-24 flex gap-8 px-8">
-				<div className="z-10 flex flex-col w-full items-center justify-center">
+				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
 						className="size-3 border-2 bg-white rounded-full"
 						ref={ideaLinkedinRef}
 					/>
 					<div className="font-semibold text-lg">Linkedin posts</div>
 				</div>
-				<div className="z-10 flex flex-col w-full items-center justify-center">
+				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
 						className="size-3 border-2 bg-white rounded-full"
 						ref={ideaYoutubeRef}
 					/>
 					<div className="font-semibold text-lg">Youtube videos</div>
 				</div>
-				<div className="z-10 flex flex-col w-full items-center justify-center">
+				<div className="z-10 flex flex-col gap-4 w-full items-center justify-center">
 					<div
 						className="size-3 border-2 bg-white rounded-full"
 						ref={ideaTiktokRef}
